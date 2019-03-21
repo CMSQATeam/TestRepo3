@@ -7,10 +7,10 @@ using UnityEngine.ProBuilder.MeshOperations;
 
 namespace UnityEditor.ProBuilder
 {
-    ///     <summary>
-                ///     Helper functions for working with Unity object selection and ProBuilder mesh attribute selections.
-                ///     </summary>
-                            [InitializeOnLoad]
+    ///         <summary>
+                                ///         Helper functions for working with Unity object selection and ProBuilder mesh attribute selections.
+                                ///         </summary>
+                                                            [InitializeOnLoad]
     public static class MeshSelection
     {
         static List<ProBuilderMesh> s_TopSelection = new List<ProBuilderMesh>();
@@ -21,10 +21,10 @@ namespace UnityEditor.ProBuilder
         static bool s_SelectedElementGroupsDirty = true;
         static Bounds s_SelectionBounds = new Bounds();
 
-        ///     <value>
-                                ///     An axis-aligned bounding box encompassing the selected elements.
-                                ///     </value>
-                                                        public static Bounds bounds
+        ///         <value>
+                                                                ///         An axis-aligned bounding box encompassing the selected elements.
+                                                                ///         </value>
+                                                                                                                        public static Bounds bounds
         {
             get { return s_SelectionBounds; }
         }
@@ -36,32 +36,32 @@ namespace UnityEditor.ProBuilder
         static int s_TotalVertexCountCompiled;
         static int s_TotalTriangleCountCompiled;
 
-        ///     <value>
-                                ///     How many ProBuilderMesh components are currently selected. Corresponds to the length of Top.
-                                ///     </value>
-                                                        public static int selectedObjectCount { get; private set; }
+        ///         <value>
+                                                                ///         How many ProBuilderMesh components are currently selected. Corresponds to the length of Top.
+                                                                ///         </value>
+                                                                                                                        public static int selectedObjectCount { get; private set; }
 
-        ///     <value>
-                                ///     The sum of all selected ProBuilderMesh selected vertex counts.
-                                ///     </value>
-                                ///     <seealso cref="P:UnityEditor.ProBuilder.MeshSelection.selectedSharedVertexCount"/>
-                                                        public static int selectedVertexCount { get; private set; }
+        ///         <value>
+                                                                ///         The sum of all selected ProBuilderMesh selected vertex counts.
+                                                                ///         </value>
+                                                                ///         <seealso cref="P:UnityEditor.ProBuilder.MeshSelection.selectedSharedVertexCount"/>
+                                                                                                                        public static int selectedVertexCount { get; private set; }
 
-        ///     <value>
-                                ///     The sum of all selected ProBuilderMesh selected shared vertex counts.
-                                ///     </value>
-                                ///     <seealso cref="P:UnityEditor.ProBuilder.MeshSelection.selectedVertexCount"/>
-                                                        public static int selectedSharedVertexCount { get; private set; }
+        ///         <value>
+                                                                ///         The sum of all selected ProBuilderMesh selected shared vertex counts.
+                                                                ///         </value>
+                                                                ///         <seealso cref="P:UnityEditor.ProBuilder.MeshSelection.selectedVertexCount"/>
+                                                                                                                        public static int selectedSharedVertexCount { get; private set; }
 
-        ///     <value>
-                                ///     The sum of all selected ProBuilderMesh selected face counts.
-                                ///     </value>
-                                                        public static int selectedFaceCount { get; private set; }
+        ///         <value>
+                                                                ///         The sum of all selected ProBuilderMesh selected face counts.
+                                                                ///         </value>
+                                                                                                                        public static int selectedFaceCount { get; private set; }
 
-        ///     <value>
-                                ///     The sum of all selected ProBuilderMesh selected edge counts.
-                                ///     </value>
-                                                        public static int selectedEdgeCount { get; private set; }
+        ///         <value>
+                                                                ///         The sum of all selected ProBuilderMesh selected edge counts.
+                                                                ///         </value>
+                                                                                                                        public static int selectedEdgeCount { get; private set; }
 
         // per-object selected element maxes
         internal static int selectedFaceCountObjectMax { get; private set; }
@@ -104,10 +104,10 @@ namespace UnityEditor.ProBuilder
             OnObjectSelectionChanged();
         }
 
-        ///     <value>
-                                ///     Returns the active selected mesh.
-                                ///     </value>
-                                                        public static ProBuilderMesh activeMesh
+        ///         <value>
+                                                                ///         Returns the active selected mesh.
+                                                                ///         </value>
+                                                                                                                        public static ProBuilderMesh activeMesh
         {
             get { return s_ActiveMesh; }
         }
@@ -117,10 +117,10 @@ namespace UnityEditor.ProBuilder
             get { return activeMesh != null ? activeMesh.selectedFacesInternal.LastOrDefault() : null; }
         }
 
-        ///     <value>
-                                ///     Receive notifications when the object selection changes.
-                                ///     </value>
-                                                        public static event System.Action objectSelectionChanged;
+        ///         <value>
+                                                                ///         Receive notifications when the object selection changes.
+                                                                ///         </value>
+                                                                                                                        public static event System.Action objectSelectionChanged;
 
         internal static void OnObjectSelectionChanged()
         {
@@ -257,11 +257,11 @@ namespace UnityEditor.ProBuilder
             }
         }
 
-        ///     <summary>
-                                ///     Get all selected ProBuilderMesh components. Corresponds to Selection.gameObjects.Select(x => x.GetComponent<ProBuilderMesh>().Where(y => y != null).
-                                ///     </summary>
-                                ///     <value>An array of the currently selected ProBuilderMesh components. Does not include children of selected objects.</value>
-                                                        public static IEnumerable<ProBuilderMesh> top
+        ///         <summary>
+                                                                ///         Get all selected ProBuilderMesh components. Corresponds to Selection.gameObjects.Select(x => x.GetComponent<ProBuilderMesh>().Where(y => y != null).
+                                                                ///         </summary>
+                                                                ///         <value>An array of the currently selected ProBuilderMesh components. Does not include children of selected objects.</value>
+                                                                                                                        public static IEnumerable<ProBuilderMesh> top
         {
             get { return new ReadOnlyCollection<ProBuilderMesh>(s_TopSelection); }
         }
@@ -271,11 +271,11 @@ namespace UnityEditor.ProBuilder
             get { return s_TopSelection; }
         }
 
-        ///     <summary>
-                                ///     Get all selected ProBuilderMesh components, including those in children of selected objects.
-                                ///     </summary>
-                                ///     <returns>All selected ProBuilderMesh components, including those in children of selected objects.</returns>
-                                                        public static IEnumerable<ProBuilderMesh> deep
+        ///         <summary>
+                                                                ///         Get all selected ProBuilderMesh components, including those in children of selected objects.
+                                                                ///         </summary>
+                                                                ///         <returns>All selected ProBuilderMesh components, including those in children of selected objects.</returns>
+                                                                                                                        public static IEnumerable<ProBuilderMesh> deep
         {
             get { return Selection.gameObjects.SelectMany(x => x.GetComponentsInChildren<ProBuilderMesh>()); }
         }
@@ -285,36 +285,36 @@ namespace UnityEditor.ProBuilder
             return s_TopSelection.Contains(mesh);
         }
 
-        ///     <value>
-                                ///     Get the number of all selected vertices across the selected ProBuilder meshes.
-                                ///     </value>
-                                ///     <remarks>
-                                ///     This is the ProBuilderMesh.vertexCount, not UnityEngine.Mesh.vertexCount. To get the optimized mesh vertex count,
-                                ///     see `totalVertexCountCompiled` for the vertex count as is rendered in the scene.
-                                ///     </remarks>
-                                                        public static int totalVertexCount { get { RebuildElementCounts(); return s_TotalVertexCount; } }
+        ///         <value>
+                                                                ///         Get the number of all selected vertices across the selected ProBuilder meshes.
+                                                                ///         </value>
+                                                                ///         <remarks>
+                                                                ///         This is the ProBuilderMesh.vertexCount, not UnityEngine.Mesh.vertexCount. To get the optimized mesh vertex count,
+                                                                ///         see `totalVertexCountCompiled` for the vertex count as is rendered in the scene.
+                                                                ///         </remarks>
+                                                                                                                        public static int totalVertexCount { get { RebuildElementCounts(); return s_TotalVertexCount; } }
 
-        ///     <value>
-                                ///     Get the number of all selected vertices across the selected ProBuilder meshes, excluding coincident duplicates.
-                                ///     </value>
-                                                        public static int totalCommonVertexCount { get { RebuildElementCounts(); return s_TotalCommonVertexCount; } }
+        ///         <value>
+                                                                ///         Get the number of all selected vertices across the selected ProBuilder meshes, excluding coincident duplicates.
+                                                                ///         </value>
+                                                                                                                        public static int totalCommonVertexCount { get { RebuildElementCounts(); return s_TotalCommonVertexCount; } }
 
         internal static int totalVertexCountOptimized { get { RebuildElementCounts(); return s_TotalVertexCountCompiled; } }
 
-        ///     <value>
-                                ///     Sum of all selected ProBuilderMesh object faceCount properties.
-                                ///     </value>
-                                                        public static int totalFaceCount { get { RebuildElementCounts(); return s_TotalFaceCount; } }
+        ///         <value>
+                                                                ///         Sum of all selected ProBuilderMesh object faceCount properties.
+                                                                ///         </value>
+                                                                                                                        public static int totalFaceCount { get { RebuildElementCounts(); return s_TotalFaceCount; } }
 
-        ///     <value>
-                                ///     Sum of all selected ProBuilderMesh object edgeCount properties.
-                                ///     </value>
-                                                        public static int totalEdgeCount { get { RebuildElementCounts(); return s_TotalEdgeCount; } }
+        ///         <value>
+                                                                ///         Sum of all selected ProBuilderMesh object edgeCount properties.
+                                                                ///         </value>
+                                                                                                                        public static int totalEdgeCount { get { RebuildElementCounts(); return s_TotalEdgeCount; } }
 
-        ///     <value>
-                                ///     Get the sum of all selected ProBuilder compiled mesh triangle counts (3 indexes make up a triangle, or 4 indexes if topology is quad).
-                                ///     </value>
-                                                        public static int totalTriangleCountCompiled { get { RebuildElementCounts(); return s_TotalTriangleCountCompiled; } }
+        ///         <value>
+                                                                ///         Get the sum of all selected ProBuilder compiled mesh triangle counts (3 indexes make up a triangle, or 4 indexes if topology is quad).
+                                                                ///         </value>
+                                                                                                                        public static int totalTriangleCountCompiled { get { RebuildElementCounts(); return s_TotalTriangleCountCompiled; } }
 
         static void RebuildElementCounts()
         {
@@ -404,10 +404,10 @@ namespace UnityEditor.ProBuilder
             AddToSelection(go);
         }
 
-        ///     <summary>
-                                ///     Clears all selected mesh attributes in the current selection. This means triangles, faces, and edges, but not objects.
-                                ///     </summary>
-                                                        public static void ClearElementSelection()
+        ///         <summary>
+                                                                ///         Clears all selected mesh attributes in the current selection. This means triangles, faces, and edges, but not objects.
+                                                                ///         </summary>
+                                                                                                                        public static void ClearElementSelection()
         {
             if (ProBuilderEditor.instance)
                 ProBuilderEditor.instance.ClearElementSelection();
@@ -416,10 +416,10 @@ namespace UnityEditor.ProBuilder
                 objectSelectionChanged();
         }
 
-        ///     <summary>
-                                ///     Clear both the Selection.objects and ProBuilder mesh attribute selections.
-                                ///     </summary>
-                                                        public static void ClearElementAndObjectSelection()
+        ///         <summary>
+                                                                ///         Clear both the Selection.objects and ProBuilder mesh attribute selections.
+                                                                ///         </summary>
+                                                                                                                        public static void ClearElementAndObjectSelection()
         {
             if (ProBuilderEditor.instance)
                 ProBuilderEditor.instance.ClearElementSelection();
