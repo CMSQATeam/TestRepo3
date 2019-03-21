@@ -258,7 +258,7 @@ namespace UnityEditor.ProBuilder
         }
 
         ///     <summary>
-                                ///     Get all selected ProBuilderMesh components. Corresponds to <![CDATA[Selection.gameObjects.Select(x => x.GetComponent<ProBuilderMesh>().Where(y => y != null);]]>.
+                                ///     Get all selected ProBuilderMesh components. Corresponds to Selection.gameObjects.Select(x => x.GetComponent<ProBuilderMesh>().Where(y => y != null).
                                 ///     </summary>
                                 ///     <value>An array of the currently selected ProBuilderMesh components. Does not include children of selected objects.</value>
                                                         public static IEnumerable<ProBuilderMesh> top
