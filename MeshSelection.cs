@@ -9,7 +9,8 @@ namespace UnityEditor.ProBuilder
 {
     ///     <summary>
                 ///     Helper functions for working with Unity object selection and ProBuilder mesh attribute selections.
-                        ///This is updated content
+                        ///This is updated content \n
+                        ///dfrefrefrgfrt
                 ///     </summary>
                             [InitializeOnLoad]
     public static class MeshSelection
